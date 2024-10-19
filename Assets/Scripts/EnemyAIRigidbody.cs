@@ -22,7 +22,8 @@ public class EnemyAI : MonoBehaviour
     private void Update(){ //should be start
         // startPosition = transform.position;
         // roamPosition = GetNewRoamingPosition();
-        if(target != null){
+        if(target != null && Vector3.Distance(transform.position, target.position) > 30.0f){
+            Debug.Log("YEEYES");
             agent.SetDestination(target.position);
         }
     }
